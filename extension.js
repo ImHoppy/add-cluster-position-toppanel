@@ -13,15 +13,19 @@ let aggregateMenu;
 let children;
 
 function init() {
-  label = new St.Label({ text: GLib.get_host_name().split('.')[0], y_align: Clutter.ActorAlign.CENTER, style_class: "hostname-label" });
-  aggregateMenu = Main.panel.statusArea["aggregateMenu"];
-  powerIndicator = aggregateMenu._power.indicators;
+	let text = GLib.get_host_name();
+	let splitHostname = text.split('.');
+	if (splitHostname.length > 1)
+		text = splitHostname[0];
+	label = new St.Label({ text: text, y_align: Clutter.ActorAlign.CENTER, style_class: "hostname-label" });
+	aggregateMenu = Main.panel.statusArea["aggregateMenu"];
+	powerIndicator = aggregateMenu._power.indicators;
 }
 
 function enable() {
-  powerIndicator.add_child(label);
+	powerIndicator.add_child(label);
 }
 
 function disable() {
-  powerIndicator.remove_child(label);
+	powerIndicator.remove_child(label);
 }

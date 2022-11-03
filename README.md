@@ -8,5 +8,8 @@ I'm too lazy to change the name.
 3. Do `gnome-extensions enable add-hostname-toppanel` in any terminal.
 4. If 3 fail, try to restart gnome with `alt+F2` or `alt+fn+F2` and type `r`.
 
+## Demo
+![Demo image](demo.png "Title")
+
 ## Credits
 Fork of https://github.com/brendaw/add-username-toppanel
